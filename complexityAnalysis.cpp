@@ -49,7 +49,6 @@ Graph::~Graph()
 void Graph::addEdge(int u, int v, int weight)
 {
     adj[u].push_back(make_pair(v, weight));
-    adj[v].push_back(make_pair(u, weight));
 }
 
 
@@ -102,7 +101,7 @@ void Graph::printAdjMatrix()
 
 int main()
 {
-    std::ofstream outFile("C:\\Users\\sasha\\PycharmProjects\\graphGenerator\\outputNew.csv");
+    std::ofstream outFile("C:\\Users\\sasha\\PycharmProjects\\graphGenerator\\output.csv");
     if (!outFile) return -3;
 
     srand(unsigned(time(0)));
@@ -112,7 +111,7 @@ int main()
 
     outFile << "Number of vertexes,Number of edges,Time\n";
 
-    for (int i = 1; i < 4; i++)
+    for (int i = 1; i < 31; i++)
     {
         std::ifstream inFile("C:\\Users\\sasha\\PycharmProjects\\graphGenerator\\graph"+ to_string(i), std::ios::binary);
         if (!inFile) return -2; 
